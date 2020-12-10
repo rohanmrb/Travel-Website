@@ -12,7 +12,7 @@ export default makeStyles(() => ({
   },
   heading: {
     backgroundColor: 'transparent',
-    fontFamily: 'Sans',
+    fontFamily: 'Sans-serif',
     color: 'darkblue',
   },
   image: {

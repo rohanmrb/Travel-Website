@@ -14,6 +14,7 @@ export default makeStyles(() => ({
     backgroundColor: 'transparent',
     fontFamily: 'Sans-serif',
     color: 'darkblue',
+    fontWeight: 'bold',
   },
   image: {
     marginLeft: '15px',

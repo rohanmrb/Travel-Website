@@ -37,7 +37,7 @@ const Posts = ({ setCurrentId }) => {
   return (
     (
       <Grid >
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form autoComplete="off" >
           <TextField className={classes.search} variant="filled" label="Search" fullWidth onChange={handleSubmit} />
         </form>
         <Grid className={classes.container} container alignItems="stretch" spacing={3}>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WANDR</title>
+		<style>
+			body
+			{
+				font-size:22px;
+				background-image:url("world2.jpg");
+				background-size:cover;
+			}
+			.signupbox
+			{
+				color:#fff;
+				width:300px;
+				height:400px;
+				position:absolute;
+				left:40%;
+				top:40%;
+				padding-top:90px;
+			}
+			.icon
+			{
+				border-radius:50%;
+				width:150px;
+				position:absolute;
+				top:-45px;
+				left:calc(50% - 75px);
+			}
+			h2
+			{
+				text-align:center;
+				font-size:35px;
+				font-weight: bold;
+				font-family: 'balsamic sans';
+			}
+			.signupbox input
+			{
+				width:100%;
+				height: 35px;
+				margin:10px;
+				border-bottom:2px solid black;
+				background:white;
+			}
+			.signupbox button
+			{
+				color: white;
+				width: 100%;
+				height: 30px;
+				margin:15px;
+				border:2px solid white;
+				background:black;
+				font-size: 20px;
+				font-weight: bold;
+				font-family: 'balsamic sans';
+			}
+			h1
+			{
+				text-align:center;
+				font-size: 170px;
+				font-weight: bold;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+				color:springgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>WANDR</h1>
+		<div class="signupbox">
+			<img src="icon.jpg" class="icon">
+		<h2>REGISTER</h2>
+		<form id="reg-form">
+			<input type="text" autocomplete="off" id="username" placeholder="Username" />
+			<input type="password" autocomplete="off" id="password" placeholder="Password" />
+			<button type="submit">REGISTER</button>
+		</form>
+		<form id="login">
+			<button  type="reset">LOGIN</button>
+		</form>
+		</div>
+		<script>
+			const form = document.getElementById('reg-form')
+			form.addEventListener('submit', registerUser)
+
+			async function registerUser(event) {
+				event.preventDefault()
+				const username = document.getElementById('username').value
+				const password = document.getElementById('password').value
+
+				const result = await fetch('/api/register', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						username,
+						password
+					})
+				}).then((res) => res.json())
+
+				if (result.status === 'ok') {
+					document.location.href = 'login.html'
+					alert('Success')
+				} else {
+					alert(result.error)
+				}
+			}
+
+			document.getElementById("login").addEventListener('reset', login)
+			async function login(event) {
+				event.preventDefault()
+				document.location.href = 'login.html'
+			}
+		</script>
+	</body>
+</html>

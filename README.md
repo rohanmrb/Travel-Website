@@ -2,7 +2,7 @@
 This repository contains the code for a Travel Website
 
 ### Team
-[Rohan M](https://github.com/rohanmrb)
+[Rohan M](https://github.com/rohanmrb) <br>
 [Praveen VO](https://github.com/Praveen94646)
 
 ## Project

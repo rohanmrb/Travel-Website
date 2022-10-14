@@ -1,4 +1,4 @@
-# Travel_website 
+# Travel website 
 This repository contains the code for a Travel Website
 
 ### Team
